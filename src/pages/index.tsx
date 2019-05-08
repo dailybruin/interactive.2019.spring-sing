@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
+import { Navbar } from '../components/Navbar'
 import {
   Article,
   CoverPhoto,
@@ -39,6 +40,7 @@ const IndexPage = ({ data }) => (
       xPosition={XPosition.Center}
       yPosition={YPosition.Center}
     />
+    <Navbar/>
     <Article dropcap={true} content={data.kerckhoffArticle.content} />
     <Footer developers="Nathan Smith" copyrightYear={2018} />
   </>
