@@ -9,6 +9,7 @@ const Cover = styled('div')`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-size: cover;
 `
 
 const CoverHead = styled('p')`
@@ -29,7 +30,9 @@ export class CoverPic extends React.Component {
     return (
       <>
         <Cover>
-          <CoverHead>spring sing 2019</CoverHead>
+          <CoverHead>
+            spring sing <strong>2019</strong>
+          </CoverHead>
         </Cover>
       </>
     )
