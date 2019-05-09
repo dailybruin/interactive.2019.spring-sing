@@ -9,10 +9,15 @@ const Cover = styled('div')`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 `
 
 const CoverHead = styled('p')`
-  font-family: Futura;
+  @font-face {
+    font-family: Futura;
+    src: local('Futura Std');
+  }
   font-size: 72px;
   color: white;
   text-align: right;

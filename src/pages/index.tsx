@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import { Navbar } from '../components/Navbar'
 import {
   Article,
   CoverPhoto,
@@ -9,7 +8,10 @@ import {
   XPosition,
   YPosition,
 } from '@dailybruin/lux'
+import styled from 'react-emotion'
 import { CoverPic } from '../components/Cover'
+import { Navbar } from '../components/Navbar'
+import { ItemGrid } from '../components/ItemGrid';
 
 export const query = graphql`
   query {
@@ -31,23 +33,52 @@ export const query = graphql`
     }
   }
 `
+
+const TESTPROPS = [
+  {
+    artist: "hi",
+    author: "hi2",
+    explainer: "ex3",
+    imageURL: "lol",
+  },
+  {
+    artist: "hAHAAHA",
+    author: "hi2",
+    explainer: "ex3",
+    imageURL: "lol",
+  },
+  {
+    artist: "hi",
+    author: "hi2",
+    explainer: "ex3",
+    imageURL: "lol",
+  },
+  {
+    artist: "hAHAAHA",
+    author: "hi2",
+    explainer: "ex3",
+    imageURL: "lol",
+  },
+  {
+    artist: "hi",
+    author: "hi2",
+    explainer: "ex3",
+    imageURL: "lol",
+  },
+  {
+    artist: "hAHAAHA",
+    author: "hi2",
+    explainer: "ex3",
+    imageURL: "lol",
+  },
+]
+
+
 const IndexPage = ({ data }) => (
   <>
-    <Head {...data.site.siteMetadata} />
-<<<<<<< HEAD
-    <CoverPhoto
-      headline={data.kerckhoffArticle.headline}
-      authors={data.kerckhoffArticle.author}
-      imageURL="https://chancellor.ucla.edu/wp-content/uploads/2018/07/ChancellorBlock_1366x912_acf_cropped.jpg"
-      xPosition={XPosition.Center}
-      yPosition={YPosition.Center}
-    />
-    <Navbar/>
-    <Article dropcap={true} content={data.kerckhoffArticle.content} />
-=======
     <CoverPic />
->>>>>>> remotes/origin/Henry
-    <Footer developers="Nathan Smith" copyrightYear={2018} />
+    <Navbar/>
+    <ItemGrid items={TESTPROPS} />
   </>
 )
 

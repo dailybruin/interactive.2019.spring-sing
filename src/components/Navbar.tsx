@@ -64,6 +64,7 @@ const A = styled(Link)`
     border-bottom: 2px solid black;
   }
 `
+
 export class Navbar extends React.Component {
   constructor(props) {
     super(props)
@@ -72,41 +73,42 @@ export class Navbar extends React.Component {
 
   render() {
     return (
-      <Nav>
-        <Ul className={css`margin: 10px;`}>
-          <Li>
-            <H1>
-              spring sing
-            </H1>
-          </Li>
-          <Li>
-            <H1 className={css`font-size: 30px; font-weight: 900px;`}>
-              2019
-            </H1>
-          </Li>
-        </Ul>
-        <div className={css`display: flex; align-items: center;`}>
-          <Ul>
+      <>
+        <Nav>
+          <Ul className={css`margin: 10px;`}>
             <Li>
-              <A to="/#solos">solos</A>
+              <H1>
+                spring sing
+              </H1>
             </Li>
             <Li>
-              <A to="/#duets">duets</A>
-            </Li>
-            <Li>
-              <A to="/#bands">bands</A>
-            </Li>
-            <Li>
-              <A to="/#extras">extras</A>
-            </Li>
-            <Li>
-              <A to="/#live-updates">live updates</A>
+              <H1 className={css`font-size: 30px; font-weight: 900px;`}>
+                2019
+              </H1>
             </Li>
           </Ul>
-          <Img src={image}/>
-        </div>
-
-      </Nav>
+          <div className={css`display: flex; align-items: center;`}>
+            <Ul>
+              <Li>
+                <A to="/#solos">solos</A>
+              </Li>
+              <Li>
+                <A to="/#duets">duets</A>
+              </Li>
+              <Li>
+                <A to="/#bands">bands</A>
+              </Li>
+              <Li>
+                <A to="/#extras">extras</A>
+              </Li>
+              <Li>
+                <A to="/#live-updates">live updates</A>
+              </Li>
+            </Ul>
+            <Img src={image}/>
+          </div>
+        </Nav>
+      </>      
     )
   }
 }

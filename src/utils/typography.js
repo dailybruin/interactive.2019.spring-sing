@@ -9,7 +9,7 @@ const typography = new Typography({
       styles: ['400'],
     },
     {
-      name: 'Futura',
+      name: 'Nunito',
       styles: ['400'],
     },
   ],
