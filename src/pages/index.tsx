@@ -9,6 +9,7 @@ import {
   XPosition,
   YPosition,
 } from '@dailybruin/lux'
+import { CoverPic } from '../components/Cover'
 
 export const query = graphql`
   query {
@@ -33,6 +34,7 @@ export const query = graphql`
 const IndexPage = ({ data }) => (
   <>
     <Head {...data.site.siteMetadata} />
+<<<<<<< HEAD
     <CoverPhoto
       headline={data.kerckhoffArticle.headline}
       authors={data.kerckhoffArticle.author}
@@ -42,6 +44,9 @@ const IndexPage = ({ data }) => (
     />
     <Navbar/>
     <Article dropcap={true} content={data.kerckhoffArticle.content} />
+=======
+    <CoverPic />
+>>>>>>> remotes/origin/Henry
     <Footer developers="Nathan Smith" copyrightYear={2018} />
   </>
 )
