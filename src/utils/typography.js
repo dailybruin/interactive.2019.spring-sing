@@ -12,6 +12,14 @@ const typography = new Typography({
       name: 'Futura',
       styles: ['400'],
     },
+    {
+      name: 'Bebas Neue',
+      styles: ['400'],
+    },
+    {
+      name: 'Lato',
+      styles: ['400'],
+    },
   ],
   headerFontFamily: ['Georgia', 'serif'],
   bodyFontFamily: ['Libre Baskerville', 'serif'],

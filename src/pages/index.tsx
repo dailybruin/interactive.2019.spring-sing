@@ -9,6 +9,7 @@ import {
   YPosition,
 } from '@dailybruin/lux'
 import { CoverPic } from '../components/Cover'
+import { PhotoLibrary } from '../components/performerCard'
 
 export const query = graphql`
   query {
@@ -34,6 +35,7 @@ const IndexPage = ({ data }) => (
   <>
     <Head {...data.site.siteMetadata} />
     <CoverPic />
+    <PhotoLibrary />
     <Footer developers="Nathan Smith" copyrightYear={2018} />
   </>
 )
