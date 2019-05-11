@@ -4,14 +4,12 @@ import Springcover from '../images/springcover.svg'
 import { Navbar } from './Navbar'
 import { HoverPhoto } from './HoverPhoto'
 
-
 const Container = styled('div')`
-  width: 100%;
-  height: auto;
+  width: 100vw;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  background-color: green;
+  position: relative;
 `
 
 const OWO = styled('div')`
@@ -34,13 +32,12 @@ const Ftr = styled('div')`
 
 interface ItemGridProps {
   items: {
-    artist: String,
-    author: String,
-    explainer: String,
-    imageURL: String,
+    artist: String
+    author: String
+    explainer: String
+    imageURL: String
   }[]
 }
-
 
 export class ItemGrid extends React.Component<ItemGridProps> {
   constructor(props) {
@@ -53,14 +50,9 @@ export class ItemGrid extends React.Component<ItemGridProps> {
         <Container>
           {console.log(this.props.items)}
           {this.props.items &&
-          this.props.items.map(item => 
-            <HoverPhoto item={item}/>
-          )
-          }
+            this.props.items.map(item => <HoverPhoto item={item} />)}
         </Container>
-        <Ftr>
-          - design by Lauren Ho -
-        </Ftr>
+        <Ftr>- design by Lauren Ho -</Ftr>
       </>
     )
   }

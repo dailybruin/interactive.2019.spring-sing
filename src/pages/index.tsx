@@ -8,10 +8,11 @@ import {
   XPosition,
   YPosition,
 } from '@dailybruin/lux'
-import styled, {css} from 'react-emotion'
+import styled, { css } from 'react-emotion'
 import { CoverPic } from '../components/Cover'
 import { Navbar } from '../components/Navbar'
 import { ItemGrid } from '../components/ItemGrid'
+import AOS from 'aos'
 
 export const query = graphql`
   query {
@@ -73,12 +74,15 @@ const TESTPROPS = [
   },
 ]
 
-const IndexPage = ({ data }) => (
-  <div>
-    <CoverPic />
-    <Navbar />
-    <ItemGrid items={TESTPROPS} />
-  </div>
-)
+const IndexPage = ({ data }) => {
+  AOS.init()
+  return (
+    <div>
+      <CoverPic />
+      <Navbar />
+      <ItemGrid items={TESTPROPS} />
+    </div>
+  )
+}
 
-export default IndexPage;
+export default IndexPage

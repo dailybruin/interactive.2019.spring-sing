@@ -16,6 +16,18 @@ const typography = new Typography({
       name: 'Brandon Grotesque',
       styles: ['400'],
     },
+    {
+      name: 'Futura',
+      styles: ['400', '900'],
+    },
+    {
+      name: 'Lato',
+      styles: ['400'],
+    },
+    {
+      name: 'Bebas Neue',
+      styles: ['400', '900'],
+    },
   ],
   headerFontFamily: ['Georgia', 'serif'],
   bodyFontFamily: ['Libre Baskerville', 'serif'],

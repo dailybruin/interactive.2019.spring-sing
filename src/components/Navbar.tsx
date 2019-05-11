@@ -6,14 +6,17 @@ import image from '../images/image.svg'
 
 // Styles
 
-const H1 = styled('h1')`
-  font-family: Arial;
+const H1 = styled('p')`
+  font-family: Futura;
   text-decoration: none;
   padding: 0px 0px 0px 10px;
   border-radius: 20px;
-  font-size: 28px;
+  font-size: 36px;
   color: black;
   scroll-behavior: smooth;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 0px;
   @media only screen and (max-width: 900px) {
     font-size: 20px;
     padding: 0px 0px 0px 10px;
@@ -36,39 +39,46 @@ const Nav = styled('nav')`
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
-  padding: 0px 20px 0px 20px;
+  padding: 0px 0px 0px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   scroll-snap-align: start;
 `
 const Ul = styled('ul')`
-  display: inline-block;
+  display: flex;
   text-align: center;
+  align-items: center;
+  justify-content: space-around;
   list-style-type: none;
+  font-size: 24px;
   font-family: Nunito, Verdana, Geneva, Tahoma, sans-serif;
   margin: 0px;
 `
 const Li = styled('li')`
-  display: inline-block;
-  margin: 10px 0px 10px 0px;
+  display: flex;
+  margin: auto;
   text-decoration: none;
+  align-items: center;
+  margin-right: 66px;
   @media only screen and (max-width: 900px) {
     margin: 0px;
   }
 `
 const A = styled(Link)`
+  font-family: Lato;
   text-decoration: none;
-  padding: 3px 1px;
-  margin: 10px 0px 10px 40px;
+  padding-bottom: 2px;
+  width: auto;
   color: black;
-  font-size: 18px;
+  margin-right: 5px;
   @media only screen and (max-width: 900px) {
     font-size: 14px;
     margin: 5px 20px 5px 0px;
   }
   scroll-behavior: smooth;
   &:hover {
+    padding-bottom: 0px;
     border-bottom: 2px solid black;
   }
 `
@@ -83,61 +93,39 @@ export class Navbar extends React.Component {
     return (
       <>
         <Nav>
-          <Ul
-            className={css`
-              margin: 10px;
-            `}
-          >
+          <H1>
+            spring sing <strong>2019</strong>
+          </H1>
+
+          <Ul>
             <Li>
-              <H1>spring sing</H1>
+              <A to="/#solos">solos</A>
             </Li>
             <Li>
-              <H1
-                className={css`
-                  font-size: 30px;
-                  font-weight: 900px;
-                  @media only screen and (max-width: 900px) {
-                    font-size: 25px;
-                  }
-                `}
-              >
-                2019
-              </H1>
+              <A to="/#duets">duets</A>
             </Li>
-          </Ul>
-          <div
-            className={css`
-              display: flex;
-              align-items: center;
-            `}
-          >
-            <Ul>
-              <Li>
-                <A to="/#solos">solos</A>
-              </Li>
-              <Li>
-                <A to="/#duets">duets</A>
-              </Li>
-              <Li>
-                <A to="/#bands">bands</A>
-              </Li>
-              <Li>
-                <A to="/#extras">extras</A>
-              </Li>
-              <Li
+            <Li>
+              <A to="/#bands">bands</A>
+            </Li>
+            <Li>
+              <A to="/#extras">extras</A>
+            </Li>
+            <Li>
+              <A
+                to="/#live-updates"
                 className={css`
                   @media only screen and (max-width: 900px) {
                     display: none;
                   }
                 `}
               >
-                <A to="/#live-updates">live updates</A>
-              </Li>
-            </Ul>
-            <a href="http://www.google.com" target="_blank">
-              <Img src={image} />
-            </a>
-          </div>
+                live updates
+              </A>
+              <a href="http://www.google.com" target="_blank">
+                <Img src={image} />
+              </a>
+            </Li>
+          </Ul>
         </Nav>
       </>
     )

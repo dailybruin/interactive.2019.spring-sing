@@ -13,10 +13,11 @@ const Cover = styled('div')`
 `
 
 const CoverHead = styled('p')`
-  @font-face {
+  /*@font-face {
     font-family: Futura;
     src: local('Futura Std');
-  }
+  }*/
+  font-family: Futura;
   font-size: 72px;
   color: white;
   text-align: right;
