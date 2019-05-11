@@ -86,6 +86,7 @@ interface HoverPhotoProps {
     author: String
     explainer: String
     imageURL: String
+    link: string
   }
 }
 AOS.init()
@@ -99,7 +100,7 @@ export class HoverPhoto extends React.Component<HoverPhotoProps> {
     return (
       <>
         <PerformerPic>
-          <a href="/" target="_blank">
+          <a href={this.props.item.link} target="_blank">
             <PerformerHover className="hovelement">
               <TextWrapper>
                 <ArtistName>{this.props.item.artist.toUpperCase()}</ArtistName>
