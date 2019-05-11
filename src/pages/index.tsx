@@ -11,7 +11,7 @@ import {
 import styled from 'react-emotion'
 import { CoverPic } from '../components/Cover'
 import { Navbar } from '../components/Navbar'
-import { ItemGrid } from '../components/ItemGrid';
+import { ItemGrid } from '../components/ItemGrid'
 
 export const query = graphql`
   query {
@@ -36,50 +36,49 @@ export const query = graphql`
 
 const TESTPROPS = [
   {
-    artist: "hi",
-    author: "hi2",
-    explainer: "ex3",
-    imageURL: "lol",
+    artist: 'hi',
+    author: 'hi2',
+    explainer: 'ex3',
+    imageURL: 'lol',
   },
   {
-    artist: "hAHAAHA",
-    author: "hi2",
-    explainer: "ex3",
-    imageURL: "lol",
+    artist: 'hAHAAHA',
+    author: 'hi2',
+    explainer: 'ex3',
+    imageURL: 'lol',
   },
   {
-    artist: "hi",
-    author: "hi2",
-    explainer: "ex3",
-    imageURL: "lol",
+    artist: 'hi',
+    author: 'hi2',
+    explainer: 'ex3',
+    imageURL: 'lol',
   },
   {
-    artist: "hAHAAHA",
-    author: "hi2",
-    explainer: "ex3",
-    imageURL: "lol",
+    artist: 'hAHAAHA',
+    author: 'hi2',
+    explainer: 'ex3',
+    imageURL: 'lol',
   },
   {
-    artist: "hi",
-    author: "hi2",
-    explainer: "ex3",
-    imageURL: "lol",
+    artist: 'hi',
+    author: 'hi2',
+    explainer: 'ex3',
+    imageURL: 'lol',
   },
   {
-    artist: "hAHAAHA",
-    author: "hi2",
-    explainer: "ex3",
-    imageURL: "lol",
+    artist: 'hAHAAHA',
+    author: 'hi2',
+    explainer: 'ex3',
+    imageURL: 'lol',
   },
 ]
 
-
 const IndexPage = ({ data }) => (
-  <>
+  <div>
     <CoverPic />
-    <Navbar/>
+    <Navbar />
     <ItemGrid items={TESTPROPS} />
-  </>
+  </div>
 )
 
 export default IndexPage

@@ -14,6 +14,10 @@ const H1 = styled('h1')`
   font-size: 28px;
   color: black;
   scroll-behavior: smooth;
+  @media only screen and (max-width: 900px) {
+    font-size: 20px;
+    padding: 0px 0px 0px 10px;
+  }
 `
 
 const Img = styled('img')`
@@ -23,7 +27,6 @@ const Img = styled('img')`
   margin: 10px;
   margin-left: 1px;
   @media only screen and (max-width: 900px) {
-    display: none;
   }
 `
 
@@ -37,6 +40,7 @@ const Nav = styled('nav')`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  scroll-snap-align: start;
 `
 const Ul = styled('ul')`
   display: inline-block;
@@ -50,7 +54,7 @@ const Li = styled('li')`
   margin: 10px 0px 10px 0px;
   text-decoration: none;
   @media only screen and (max-width: 900px) {
-    padding: 4px 7px;
+    margin: 0px;
   }
 `
 const A = styled(Link)`
@@ -59,6 +63,10 @@ const A = styled(Link)`
   margin: 10px 0px 10px 40px;
   color: black;
   font-size: 18px;
+  @media only screen and (max-width: 900px) {
+    font-size: 14px;
+    margin: 5px 20px 5px 0px;
+  }
   scroll-behavior: smooth;
   &:hover {
     border-bottom: 2px solid black;
@@ -75,19 +83,34 @@ export class Navbar extends React.Component {
     return (
       <>
         <Nav>
-          <Ul className={css`margin: 10px;`}>
+          <Ul
+            className={css`
+              margin: 10px;
+            `}
+          >
             <Li>
-              <H1>
-                spring sing
-              </H1>
+              <H1>spring sing</H1>
             </Li>
             <Li>
-              <H1 className={css`font-size: 30px; font-weight: 900px;`}>
+              <H1
+                className={css`
+                  font-size: 30px;
+                  font-weight: 900px;
+                  @media only screen and (max-width: 900px) {
+                    font-size: 25px;
+                  }
+                `}
+              >
                 2019
               </H1>
             </Li>
           </Ul>
-          <div className={css`display: flex; align-items: center;`}>
+          <div
+            className={css`
+              display: flex;
+              align-items: center;
+            `}
+          >
             <Ul>
               <Li>
                 <A to="/#solos">solos</A>
@@ -101,14 +124,22 @@ export class Navbar extends React.Component {
               <Li>
                 <A to="/#extras">extras</A>
               </Li>
-              <Li>
+              <Li
+                className={css`
+                  @media only screen and (max-width: 900px) {
+                    display: none;
+                  }
+                `}
+              >
                 <A to="/#live-updates">live updates</A>
               </Li>
             </Ul>
-            <Img src={image}/>
+            <a href="http://www.google.com" target="_blank">
+              <Img src={image} />
+            </a>
           </div>
         </Nav>
-      </>      
+      </>
     )
   }
 }
