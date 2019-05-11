@@ -8,7 +8,7 @@ import {
   XPosition,
   YPosition,
 } from '@dailybruin/lux'
-import styled from 'react-emotion'
+import styled, {css} from 'react-emotion'
 import { CoverPic } from '../components/Cover'
 import { Navbar } from '../components/Navbar'
 import { ItemGrid } from '../components/ItemGrid'
@@ -48,19 +48,19 @@ const TESTPROPS = [
     imageURL: 'lol',
   },
   {
-    artist: 'hi',
+    artist: 'custom artist names!',
     author: 'hi2',
     explainer: 'ex3',
     imageURL: 'lol',
   },
   {
-    artist: 'hAHAAHA',
+    artist: 'look another artist',
     author: 'hi2',
     explainer: 'ex3',
     imageURL: 'lol',
   },
   {
-    artist: 'hi',
+    artist: 'passing in props is cool!',
     author: 'hi2',
     explainer: 'ex3',
     imageURL: 'lol',
@@ -81,4 +81,4 @@ const IndexPage = ({ data }) => (
   </div>
 )
 
-export default IndexPage
+export default IndexPage;

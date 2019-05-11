@@ -2,6 +2,8 @@ import * as React from 'react'
 import styled from 'react-emotion'
 import Springcover from '../images/springcover.svg'
 import { Navbar } from './Navbar'
+import { HoverPhoto } from './HoverPhoto'
+
 
 const Container = styled('div')`
   width: 100%;
@@ -27,6 +29,7 @@ const Ftr = styled('div')`
   text-align: center;
   font-size: 12px;
   padding: 5px;
+  font-family: Nunito, Verdana, Geneva, Tahoma, sans-serif;
 `
 
 interface ItemGridProps {
@@ -51,9 +54,7 @@ export class ItemGrid extends React.Component<ItemGridProps> {
           {console.log(this.props.items)}
           {this.props.items &&
           this.props.items.map(item => 
-            <OWO>
-              {item.artist}
-            </OWO>
+            <HoverPhoto item={item}/>
           )
           }
         </Container>

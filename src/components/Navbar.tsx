@@ -46,7 +46,7 @@ const Ul = styled('ul')`
   display: inline-block;
   text-align: center;
   list-style-type: none;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Nunito, Verdana, Geneva, Tahoma, sans-serif;
   margin: 0px;
 `
 const Li = styled('li')`

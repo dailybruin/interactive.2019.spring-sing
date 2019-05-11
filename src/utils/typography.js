@@ -5,11 +5,15 @@ import 'normalize.css'
 const typography = new Typography({
   googleFonts: [
     {
-      name: 'Libre Baskerville',
+      name: 'Nunito',
       styles: ['400'],
     },
     {
-      name: 'Nunito',
+      name: 'Oswald',
+      styles: ['400'],
+    },
+    {
+      name: 'Brandon Grotesque',
       styles: ['400'],
     },
   ],
