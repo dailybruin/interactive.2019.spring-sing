@@ -12,6 +12,7 @@ import styled, { css } from 'react-emotion'
 import { CoverPic } from '../components/Cover'
 import { Navbar } from '../components/Navbar'
 import { ItemGrid } from '../components/ItemGrid'
+import Band from '../images/bandphoto.svg'
 import AOS from 'aos'
 
 export const query = graphql`
@@ -40,7 +41,8 @@ const TESTPROPS = [
     artist: 'hi',
     author: 'hi2',
     explainer: 'ex3',
-    imageURL: 'lol',
+    imageURL:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PNG_transparency_demonstration_1.png/280px-PNG_transparency_demonstration_1.png',
     link: '/',
   },
   {

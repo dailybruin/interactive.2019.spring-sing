@@ -35,7 +35,7 @@ interface ItemGridProps {
     artist: String
     author: String
     explainer: String
-    imageURL: String
+    imageURL: string
     link: string
   }[]
 }

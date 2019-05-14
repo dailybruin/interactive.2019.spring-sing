@@ -4,6 +4,9 @@ import bandPicture from '../images/bandphoto.svg'
 import { Waypoint } from 'react-waypoint'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { CoverPhoto } from '@dailybruin/lux'
+import { css } from 'react-emotion'
+import { url } from 'inspector'
 
 const LibraryFlex = styled('div')`
   flex: 1 0 34%;
@@ -30,9 +33,13 @@ const PerformerHover = styled('span')`
     opacity: 1;
   }*/
 `
+const dynamic = props =>
+  css`
+    background: ${props.dynamicPic};
+  `
 
 const PerformerPic = styled('div')`
-  background: url(${bandPicture});
+  ${dynamic};
   background-size: cover;
   display: flex;
   position: relative;
@@ -49,6 +56,7 @@ const PerformerPic = styled('div')`
   }
   overflow-y: hidden;
 `
+
 const ArtistName = styled('p')`
   font-family: Bebas Neue, Oswald, sans-serif;
   font-size: 64px;
@@ -85,7 +93,7 @@ interface HoverPhotoProps {
     artist: String
     author: String
     explainer: String
-    imageURL: String
+    imageURL: string
     link: string
   }
 }
@@ -110,18 +118,17 @@ export class HoverPhoto extends React.Component<HoverPhotoProps> {
           onEnter={this.opacityChange}
           topOffset="80%"
         >
-          <PerformerPic>
+          <PerformerPic dynamicPic={this.props.item.imageURL}>
             <a href={this.props.item.link} target="_blank">
               <PerformerHover className="hovelement">
                 <TextWrapper>
                   <ArtistName>
                     {this.props.item.artist.toUpperCase()}
                   </ArtistName>
-                  <AuthorName>BY AUTHOR NAME</AuthorName>
-                  <CardExplainer>
-                    very short explainer of who this is and what they do; this
-                    shows up when users hover over the artist photo!
-                  </CardExplainer>
+                  <AuthorName>
+                    BY {this.props.item.author.toUpperCase()}
+                  </AuthorName>
+                  <CardExplainer>{this.props.item.explainer}</CardExplainer>
                 </TextWrapper>
               </PerformerHover>
             </a>
