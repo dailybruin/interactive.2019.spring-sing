@@ -93,26 +93,40 @@ AOS.init()
 export class HoverPhoto extends React.Component<HoverPhotoProps> {
   constructor(props) {
     super(props)
-    AOS.init()
   }
+
+  opacityChange(Component) {
+    this.setState(state => {
+      return { opacity: 0 }
+    })
+  }
+
   render() {
     AOS.init()
     return (
       <>
-        <PerformerPic>
-          <a href={this.props.item.link} target="_blank">
-            <PerformerHover className="hovelement">
-              <TextWrapper>
-                <ArtistName>{this.props.item.artist.toUpperCase()}</ArtistName>
-                <AuthorName>BY AUTHOR NAME</AuthorName>
-                <CardExplainer>
-                  very short explainer of who this is and what they do; this
-                  shows up when users hover over the artist photo!
-                </CardExplainer>
-              </TextWrapper>
-            </PerformerHover>
-          </a>
-        </PerformerPic>
+        <Waypoint
+          onLeave={this.opacityChange}
+          onEnter={this.opacityChange}
+          topOffset="80%"
+        >
+          <PerformerPic>
+            <a href={this.props.item.link} target="_blank">
+              <PerformerHover className="hovelement">
+                <TextWrapper>
+                  <ArtistName>
+                    {this.props.item.artist.toUpperCase()}
+                  </ArtistName>
+                  <AuthorName>BY AUTHOR NAME</AuthorName>
+                  <CardExplainer>
+                    very short explainer of who this is and what they do; this
+                    shows up when users hover over the artist photo!
+                  </CardExplainer>
+                </TextWrapper>
+              </PerformerHover>
+            </a>
+          </PerformerPic>
+        </Waypoint>
       </>
     )
   }
