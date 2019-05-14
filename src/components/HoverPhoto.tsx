@@ -6,17 +6,17 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { CoverPhoto } from '@dailybruin/lux'
 import { css } from 'react-emotion'
-import { url } from 'inspector'
+import { Interpolation } from 'emotion';
 
-const LibraryFlex = styled('div')`
-  flex: 1 0 34%;
-  @media only screen and (max-width: 900px) {
-    flex: 1 0 100%;
-  }
-  height: calc((100vh - 73px - 30px) / 2);
-  overflow-y: hidden;
-  font-family: Nunito, Verdana, Geneva, Tahoma, sans-serif;
-`
+// const LibraryFlex = styled('div')`
+//   flex: 1 0 34%;
+//   @media only screen and (max-width: 900px) {
+//     flex: 1 0 51%;
+//   }
+//   height: calc((100vh - 73px - 30px) / 3);
+//   overflow-y: hidden;
+//   font-family: Nunito, Verdana, Geneva, Tahoma, sans-serif;
+// `
 
 const PerformerHover = styled('span')`
   position: absolute;
@@ -35,7 +35,7 @@ const PerformerHover = styled('span')`
 `
 const dynamic = props =>
   css`
-    background: ${props.dynamicPic};
+    background: url(${props.dynamicPic});
   `
 
 const PerformerPic = styled('div')`
@@ -44,10 +44,10 @@ const PerformerPic = styled('div')`
   display: flex;
   position: relative;
   flex-wrap: wrap;
-  height: calc((100vh - 73px) / 2);
-  min-width: 50%;
+  height: calc((100vh - 73px) / 1.5);
+  flex: 1 0 34%;
   @media only screen and (max-width: 900px) {
-    min-width: 100%;
+    flex: 1 0 51%;
   }
   margin: 0px;
   padding: 0px;
@@ -90,23 +90,26 @@ const TextWrapper = styled('div')`
 
 interface HoverPhotoProps {
   item: {
-    artist: String
-    author: String
-    explainer: String
-    imageURL: string
-    link: string
+    artist: String,
+    author: String,
+    explainer: String,
+    imageURL: String,
+    link: String,
   }
 }
+
+interface HoverPhotoState {
+  opacity: Interpolation,
+}
 AOS.init()
-export class HoverPhoto extends React.Component<HoverPhotoProps> {
+
+
+export class HoverPhoto extends React.Component<HoverPhotoProps, HoverPhotoState> {
   constructor(props) {
     super(props)
   }
 
-  opacityChange(Component) {
-    this.setState(state => {
-      return { opacity: 0 }
-    })
+  opacityChange() {
   }
 
   render() {
@@ -114,13 +117,12 @@ export class HoverPhoto extends React.Component<HoverPhotoProps> {
     return (
       <>
         <Waypoint
-          onLeave={this.opacityChange}
           onEnter={this.opacityChange}
           topOffset="80%"
         >
           <PerformerPic dynamicPic={this.props.item.imageURL}>
-            <a href={this.props.item.link} target="_blank">
-              <PerformerHover className="hovelement">
+            <a target="_blank">
+              <PerformerHover>
                 <TextWrapper>
                   <ArtistName>
                     {this.props.item.artist.toUpperCase()}

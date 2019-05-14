@@ -5,7 +5,7 @@ import { Navbar } from './Navbar'
 import { HoverPhoto } from './HoverPhoto'
 
 const Container = styled('div')`
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
