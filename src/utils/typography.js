@@ -17,10 +17,6 @@ const typography = new Typography({
       styles: ['400'],
     },
     {
-      name: 'Futura',
-      styles: ['400', '900'],
-    },
-    {
       name: 'Lato',
       styles: ['400'],
     },

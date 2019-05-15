@@ -14,6 +14,16 @@ import { Navbar } from '../components/Navbar'
 import { ItemGrid } from '../components/ItemGrid'
 import Band from '../images/bandphoto.svg'
 import AOS from 'aos'
+import { storyListFont } from '@dailybruin/lux/src/globals/mainsiteGlobalStyles';
+
+const Ftr = styled('div')`
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  font-size: 12px;
+  padding: 5px;
+  font-family: Nunito, Verdana, Geneva, Tahoma, sans-serif;
+`
 
 export const query = graphql`
   query {
@@ -26,11 +36,33 @@ export const query = graphql`
       }
     }
     kerckhoffArticle {
-      headline
-      author
-      content {
-        type
-        value
+      solos {
+        artist
+        author
+        explainer
+        imageURL
+        link
+      }
+      duets {
+        artist
+        author
+        explainer
+        imageURL
+        link
+      }
+      bands {
+        artist
+        author
+        explainer
+        imageURL
+        link
+      }
+      extras {
+        artist
+        author
+        explainer
+        imageURL
+        link
       }
     }
   }
@@ -84,11 +116,17 @@ const TESTPROPS = [
 
 const IndexPage = ({ data }) => {
   AOS.init()
+
   return (
     <div>
       <CoverPic />
+      {console.log(data)}
       <Navbar />
-      <ItemGrid items={TESTPROPS} />
+      <ItemGrid items={data.kerckhoffArticle.solos} id="duets" />
+      <ItemGrid items={data.kerckhoffArticle.duets} id="bands" />
+      <ItemGrid items={data.kerckhoffArticle.bands} id="extras" />
+      <ItemGrid items={data.kerckhoffArticle.extras} id="" />
+      <Ftr>- design by Lauren Ho -</Ftr>
     </div>
   )
 }

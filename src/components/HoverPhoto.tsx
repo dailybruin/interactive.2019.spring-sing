@@ -90,11 +90,11 @@ const TextWrapper = styled('div')`
 
 interface HoverPhotoProps {
   item: {
-    artist: String,
-    author: String,
-    explainer: String,
-    imageURL: String,
-    link: String,
+    artist: string,
+    author: string,
+    explainer: string,
+    imageURL: string,
+    link: string,
   }
 }
 
@@ -114,6 +114,21 @@ export class HoverPhoto extends React.Component<HoverPhotoProps, HoverPhotoState
 
   render() {
     AOS.init()
+    if (this.props.item.link == "NULL")
+    {
+      return (
+        <div className={css`
+          height: calc((100vh - 73px) / 1.5);
+          background-color: rgba(0,0,0,0.65);
+          flex: 1 0 34%;
+          @media only screen and (max-width: 900px) {
+            display: none;
+          }
+        `}>
+          
+        </div>
+      )
+    }
     return (
       <>
         <Waypoint
@@ -121,7 +136,7 @@ export class HoverPhoto extends React.Component<HoverPhotoProps, HoverPhotoState
           topOffset="80%"
         >
           <PerformerPic dynamicPic={this.props.item.imageURL}>
-            <a target="_blank">
+            <a href={this.props.item.link} target="_blank">
               <PerformerHover>
                 <TextWrapper>
                   <ArtistName>

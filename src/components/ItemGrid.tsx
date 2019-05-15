@@ -1,5 +1,5 @@
 import * as React from 'react'
-import styled from 'react-emotion'
+import styled, {css} from 'react-emotion'
 import Springcover from '../images/springcover.svg'
 import { Navbar } from './Navbar'
 import { HoverPhoto } from './HoverPhoto'
@@ -21,16 +21,8 @@ const OWO = styled('div')`
   border: 5px solid black;
 `
 
-const Ftr = styled('div')`
-  width: 100%;
-  height: 30px;
-  text-align: center;
-  font-size: 12px;
-  padding: 5px;
-  font-family: Nunito, Verdana, Geneva, Tahoma, sans-serif;
-`
-
 interface ItemGridProps {
+  id: string,
   items: {
     artist: String
     author: String
@@ -46,14 +38,28 @@ export class ItemGrid extends React.Component<ItemGridProps> {
   }
 
   render() {
+    console.log(this.props.items.length)
+    if (this.props.items.length % 2 !== 0)
+    {
+      this.props.items.push({artist: "", author: "", explainer: "", imageURL: "", link: "NULL"})
+    }
     return (
       <>
         <Container>
-          {console.log(this.props.items)}
           {this.props.items &&
             this.props.items.map(item => <HoverPhoto item={item} />)}
+          <div id={this.props.id} className={css`
+            position: absolute; 
+            bottom: 0; 
+            height: 62px; 
+            width: 100%;
+            pointer-events: none;
+            @media only screen and (max-width: 1250px) {
+              height: 54.45px;
+            }
+          `}>
+          </div>
         </Container>
-        <Ftr>- design by Lauren Ho -</Ftr>
       </>
     )
   }

@@ -7,7 +7,7 @@ import image from '../images/image.svg'
 // Styles
 
 const H1 = styled('p')`
-  font-family: Futura;
+  font-family: Futura, Lato;
   text-decoration: none;
   padding: 0px 0px 0px 10px;
   border-radius: 20px;
@@ -17,6 +17,9 @@ const H1 = styled('p')`
   margin-top: 5px;
   margin-bottom: 5px;
   margin-left: 0px;
+  @media only screen and (max-width: 1250px) {
+    font-size: 28px;
+  }
   @media only screen and (max-width: 900px) {
     font-size: 20px;
     padding: 0px 0px 0px 10px;
@@ -38,7 +41,8 @@ const Nav = styled('nav')`
   background: white;
   position: -webkit-sticky;
   position: sticky;
-  top: 0px;
+  vertical-align: middle;
+  top: 0;
   padding: 0px 0px 0px 20px;
   display: flex;
   align-items: center;
@@ -60,7 +64,10 @@ const Li = styled('li')`
   margin: auto;
   text-decoration: none;
   align-items: center;
-  margin-right: 66px;
+  margin-right: 60px;
+  @media only screen and (max-width: 1250px) {
+    margin-right: 40px;
+  }
   @media only screen and (max-width: 900px) {
     margin: 0px;
   }
@@ -72,6 +79,9 @@ const A = styled(Link)`
   width: auto;
   color: black;
   margin-right: 5px;
+  @media only screen and (max-width: 1250px) {
+    font-size: 18px;
+  }
   @media only screen and (max-width: 900px) {
     font-size: 14px;
     margin: 5px 20px 5px 0px;
