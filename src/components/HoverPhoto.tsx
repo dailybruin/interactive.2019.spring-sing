@@ -59,7 +59,10 @@ const PerformerPic = styled('div')`
 
 const ArtistName = styled('p')`
   font-family: Bebas Neue, Oswald, sans-serif;
-  font-size: 64px;
+  /* font-size: 64px; */
+  @media only screen and (max-width: 900px) {
+    font-size: 48px;
+  }
   margin-bottom: 15px;
   margin-top: 10px;
   padding: 0px;
@@ -69,6 +72,9 @@ const ArtistName = styled('p')`
 const AuthorName = styled('p')`
   font-family: Lato, Brandon Grotesque, sans-serif;
   font-size: 18px;
+  @media only screen and (max-width: 900px) {
+    font-size: 14px;
+  }
   font-weight: 900;
   margin-bottom: 20px;
   padding: 0px;
@@ -77,6 +83,9 @@ const AuthorName = styled('p')`
 const CardExplainer = styled('p')`
   font-family: Lato, Brandon Grotesque, sans-serif;
   font-size: 18px;
+  @media only screen and (max-width: 900px) {
+    font-size: 14px;
+  }
   padding: 0px;
   letter-spacing: 0.1em;
 `
@@ -114,6 +123,7 @@ export class HoverPhoto extends React.Component<HoverPhotoProps, HoverPhotoState
 
   render() {
     AOS.init()
+
     if (this.props.item.link == "NULL")
     {
       return (
@@ -139,7 +149,9 @@ export class HoverPhoto extends React.Component<HoverPhotoProps, HoverPhotoState
             <a href={this.props.item.link} target="_blank">
               <PerformerHover>
                 <TextWrapper>
-                  <ArtistName>
+                  <ArtistName className={css`
+                    font-size: ${this.props.item.artist.toUpperCase() == "NEWS: GERSHWIN AWARD RESCINDED" ? "48px":"64px"};
+                  `}>
                     {this.props.item.artist.toUpperCase()}
                   </ArtistName>
                   <AuthorName>
