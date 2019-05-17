@@ -84,7 +84,7 @@ const A = styled(Link)`
   }
   @media only screen and (max-width: 900px) {
     font-size: 14px;
-    margin: 5px 20px 5px 0px;
+    margin: 2px 8px 2px 0px;
   }
   scroll-behavior: smooth;
   &:hover {

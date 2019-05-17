@@ -134,6 +134,12 @@ const IndexPage = ({ data }) => {
       `}>
 
       </div>
+      <div id="solos" className={css`
+        position: absolute; 
+        height: 0px;
+        bottom: 0px;
+      `}>
+      </div>
       <Navbar />
       <ItemGrid items={data.kerckhoffArticle.solos} id="duets" />
       <ItemGrid items={data.kerckhoffArticle.duets} id="bands" />
