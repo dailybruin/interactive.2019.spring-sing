@@ -93,6 +93,27 @@ const A = styled(Link)`
   }
 `
 
+const ANoLink = styled('a')`
+  font-family: Lato;
+  text-decoration: none;
+  padding-bottom: 2px;
+  width: auto;
+  color: black;
+  margin-right: 5px;
+  @media only screen and (max-width: 1250px) {
+    font-size: 18px;
+  }
+  @media only screen and (max-width: 900px) {
+    font-size: 14px;
+    margin: 2px 8px 2px 0px;
+  }
+  scroll-behavior: smooth;
+  &:hover {
+    padding-bottom: 0px;
+    border-bottom: 2px solid black;
+  }
+`
+
 export class Navbar extends React.Component {
   constructor(props) {
     super(props)
@@ -121,8 +142,8 @@ export class Navbar extends React.Component {
               <A to="/#extras">extras</A>
             </Li>
             <Li>
-              <A
-                to="https://twitter.com/dailybruin?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+              <ANoLink
+                href="https://twitter.com/dailybruin?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"
                 className={css`
                   @media only screen and (max-width: 900px) {
                     display: none;
@@ -130,7 +151,7 @@ export class Navbar extends React.Component {
                 `}
               >
                 live updates
-              </A>
+              </ANoLink>
               <a href="https://twitter.com/dailybruin?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">
                 <Img src={image} />
               </a>
