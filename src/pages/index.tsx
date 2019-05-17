@@ -121,30 +121,32 @@ const IndexPage = ({ data }) => {
 
   return (
     <div>
-      {/* <CoverPic /> */}
-      <div className={css`
-        height: 100vh;
-        width: 100%;
-        object-fit: cover;
-        background-image: url(${cover});
-        background-size: 100% 100%;
-        @media only screen and (max-width: 900px) {
-          background-image: url(${mobilecover});
-        }
-      `}>
-        <div id="solos" className={css`
-          position: absolute; 
-          height: 0px;
-          bottom: 0px;
+      {/* <div ontouchstart> */}
+        {/* <CoverPic /> */}
+        <div className={css`
+          height: 100vh;
+          width: 100%;
+          object-fit: cover;
+          background-image: url(${cover});
+          background-size: 100% 100%;
+          @media only screen and (max-width: 900px) {
+            background-image: url(${mobilecover});
+          }
         `}>
+          <div id="solos" className={css`
+            position: absolute; 
+            height: 0px;
+            bottom: 0px;
+          `}>
+          </div>
         </div>
-      </div>
-      <Navbar />
-      <ItemGrid items={data.kerckhoffArticle.solos} id="duets" />
-      <ItemGrid items={data.kerckhoffArticle.duets} id="bands" />
-      <ItemGrid items={data.kerckhoffArticle.bands} id="extras" />
-      <ItemGrid items={data.kerckhoffArticle.extras} id="" />
-      <Ftr>- design by Lauren Ho -</Ftr>
+        <Navbar />
+        <ItemGrid items={data.kerckhoffArticle.solos} id="duets" />
+        <ItemGrid items={data.kerckhoffArticle.duets} id="bands" />
+        <ItemGrid items={data.kerckhoffArticle.bands} id="extras" />
+        <ItemGrid items={data.kerckhoffArticle.extras} id="" />
+        <Ftr>- design by Lauren Ho -</Ftr>
+      {/* </div> */}
     </div>
   )
 }

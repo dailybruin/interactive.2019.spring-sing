@@ -1,6 +1,6 @@
 const slugify = require('slugify')
 
-const siteName = 'Spring Sing 2019'
+const siteName = 'Spring Sing'
 const description = 'Contestants will take the stage for Spring Sing 2019. Here are the night\'s performers!'
 const image =
   'https://assets.dailybruin.com/images/interactive.2019.spring-sing/coverphoto-f8daaa27a056d8784de6bd54b51e354d.png'
@@ -15,6 +15,7 @@ module.exports = {
     url,
     image,
   },
+  pathPrefix: '/2019/spring-sing',
   plugins: [
     {
       resolve: 'gatsby-plugin-manifest',
