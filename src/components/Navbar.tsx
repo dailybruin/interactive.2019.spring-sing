@@ -143,7 +143,7 @@ export class Navbar extends React.Component {
             </Li>
             <Li>
               <ANoLink
-                href="https://twitter.com/dailybruin?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"
+                href="https://twitter.com/dailybruinae?lang=en" target="_blank"
                 className={css`
                   @media only screen and (max-width: 900px) {
                     display: none;
@@ -152,7 +152,7 @@ export class Navbar extends React.Component {
               >
                 live updates
               </ANoLink>
-              <a href="https://twitter.com/dailybruin?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">
+              <a href="https://twitter.com/dailybruinae?lang=en" target="_blank">
                 <Img src={image} />
               </a>
             </Li>
