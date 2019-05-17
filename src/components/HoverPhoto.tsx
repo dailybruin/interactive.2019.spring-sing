@@ -1,9 +1,9 @@
 import * as React from 'react'
 import styled from 'react-emotion'
 import bandPicture from '../images/bandphoto.svg'
-import { Waypoint } from 'react-waypoint'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+// import { Waypoint } from 'react-waypoint'
+// import AOS from 'aos'
+// import 'aos/dist/aos.css'
 import { CoverPhoto } from '@dailybruin/lux'
 import { css } from 'react-emotion'
 import { Interpolation } from 'emotion';
@@ -110,7 +110,7 @@ interface HoverPhotoProps {
 interface HoverPhotoState {
   opacity: Interpolation,
 }
-AOS.init()
+// AOS.init()
 
 
 export class HoverPhoto extends React.Component<HoverPhotoProps, HoverPhotoState> {
@@ -122,7 +122,7 @@ export class HoverPhoto extends React.Component<HoverPhotoProps, HoverPhotoState
   }
 
   render() {
-    AOS.init()
+    // AOS.init()
 
     if (this.props.item.link == "NULL")
     {
@@ -141,10 +141,10 @@ export class HoverPhoto extends React.Component<HoverPhotoProps, HoverPhotoState
     }
     return (
       <>
-        <Waypoint
+        {/* <Waypoint
           onEnter={this.opacityChange}
           topOffset="80%"
-        >
+        > */}
           <PerformerPic dynamicPic={this.props.item.imageURL}>
             <a href={this.props.item.link} target="_blank">
               <PerformerHover>
@@ -162,7 +162,7 @@ export class HoverPhoto extends React.Component<HoverPhotoProps, HoverPhotoState
               </PerformerHover>
             </a>
           </PerformerPic>
-        </Waypoint>
+        {/* </Waypoint> */}
       </>
     )
   }

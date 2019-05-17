@@ -13,7 +13,7 @@ import { CoverPic } from '../components/Cover'
 import { Navbar } from '../components/Navbar'
 import { ItemGrid } from '../components/ItemGrid'
 import Band from '../images/bandphoto.svg'
-import AOS from 'aos'
+// import AOS from 'aos'
 import { storyListFont } from '@dailybruin/lux/src/globals/mainsiteGlobalStyles';
 
 const Ftr = styled('div')`
@@ -115,7 +115,7 @@ const TESTPROPS = [
 ]
 
 const IndexPage = ({ data }) => {
-  AOS.init()
+  // AOS.init()
 
   return (
     <div>
