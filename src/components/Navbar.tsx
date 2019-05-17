@@ -18,11 +18,11 @@ const H1 = styled('p')`
   margin-bottom: 5px;
   margin-left: 0px;
   @media only screen and (max-width: 1250px) {
-    font-size: 28px;
+    font-size: 24px;
   }
   @media only screen and (max-width: 900px) {
-    font-size: 20px;
-    padding: 0px 0px 0px 10px;
+    font-size: 18px;
+    padding: 0px 0px 0px 0px;
   }
 `
 

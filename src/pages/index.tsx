@@ -15,6 +15,8 @@ import { ItemGrid } from '../components/ItemGrid'
 import Band from '../images/bandphoto.svg'
 // import AOS from 'aos'
 import { storyListFont } from '@dailybruin/lux/src/globals/mainsiteGlobalStyles';
+import cover from '../images/coverphoto.png'
+import mobilecover from '../images/mobilecover.png'
 
 const Ftr = styled('div')`
   width: 100%;
@@ -119,8 +121,19 @@ const IndexPage = ({ data }) => {
 
   return (
     <div>
-      <CoverPic />
-      {console.log(data)}
+      {/* <CoverPic /> */}
+      <div className={css`
+        height: 100vh;
+        width: 100%;
+        object-fit: cover;
+        background-image: url(${cover});
+        background-size: 100% 100%;
+        @media only screen and (max-width: 900px) {
+          background-image: url(${mobilecover});
+        }
+      `}>
+
+      </div>
       <Navbar />
       <ItemGrid items={data.kerckhoffArticle.solos} id="duets" />
       <ItemGrid items={data.kerckhoffArticle.duets} id="bands" />
