@@ -36,6 +36,7 @@ const PerformerHover = styled('span')`
 const dynamic = props =>
   css`
     background: url(${props.dynamicPic});
+    background-position: center;
   `
 
 const PerformerPic = styled('div')`
