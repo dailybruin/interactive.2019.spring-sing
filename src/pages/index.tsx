@@ -132,13 +132,12 @@ const IndexPage = ({ data }) => {
           background-image: url(${mobilecover});
         }
       `}>
-
-      </div>
-      <div id="solos" className={css`
-        position: absolute; 
-        height: 0px;
-        bottom: 0px;
-      `}>
+        <div id="solos" className={css`
+          position: absolute; 
+          height: 0px;
+          bottom: 0px;
+        `}>
+        </div>
       </div>
       <Navbar />
       <ItemGrid items={data.kerckhoffArticle.solos} id="duets" />
