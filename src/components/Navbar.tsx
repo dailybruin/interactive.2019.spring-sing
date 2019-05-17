@@ -122,7 +122,7 @@ export class Navbar extends React.Component {
             </Li>
             <Li>
               <A
-                to="/#live-updates"
+                to="https://twitter.com/dailybruin?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
                 className={css`
                   @media only screen and (max-width: 900px) {
                     display: none;
@@ -131,7 +131,7 @@ export class Navbar extends React.Component {
               >
                 live updates
               </A>
-              <a href="http://www.google.com" target="_blank">
+              <a href="https://twitter.com/dailybruin?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">
                 <Img src={image} />
               </a>
             </Li>

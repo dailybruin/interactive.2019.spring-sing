@@ -14,9 +14,6 @@ const Container = styled('div')`
 
 const OWO = styled('div')`
   flex: 1 0 34%;
-  @media only screen and (max-width: 900px) {
-    flex: 1 0 51%;
-  }
   height: calc((100vh - 73px - 30px) / 2);
   border: 5px solid black;
 `
