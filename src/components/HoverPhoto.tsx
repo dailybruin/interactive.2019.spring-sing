@@ -54,6 +54,9 @@ const PerformerPic = styled('div')`
   &:hover ${PerformerHover} {
     opacity: 1;
   }
+  &:active ${PerformerHover} {
+    opacity: 1;
+  }
   overflow-y: hidden;
 `
 
