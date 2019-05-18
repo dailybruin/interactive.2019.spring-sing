@@ -58,13 +58,17 @@ const PerformerPic = styled('div')`
   &:active ${PerformerHover} {
     opacity: 1;
   }
+  @media only screen and (max-width: 900px) {
+    ${PerformerHover} {
+    }
+  }
   overflow-y: hidden;
 `
 
 const ArtistName = styled('p')`
   font-family: Bebas Neue, Oswald, sans-serif;
-  /* font-size: 64px; */
-  @media only screen and (max-width: 900px) {
+  font-size: 56px;
+  @media only screen and (max-width: 1250px) {
     font-size: 48px;
   }
   margin-bottom: 15px;
@@ -154,7 +158,10 @@ export class HoverPhoto extends React.Component<HoverPhotoProps, HoverPhotoState
               <PerformerHover>
                 <TextWrapper>
                   <ArtistName className={css`
-                    font-size: ${this.props.item.artist.toUpperCase() == "NEWS: GERSHWIN AWARD RESCINDED" ? "48px":"64px"};
+                    font-size: ${this.props.item.artist.toUpperCase() == "NEWS: GERSHWIN AWARD RESCINDED" ? "48px":"56px"};
+                    @media only screen and (max-width: 1250px) {
+                      font-size: ${this.props.item.artist.toUpperCase() == "NEWS: GERSHWIN AWARD RESCINDED" ? "40px":"48px"};
+                    }
                   `}>
                     {this.props.item.artist.toUpperCase()}
                   </ArtistName>

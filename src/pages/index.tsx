@@ -70,59 +70,11 @@ export const query = graphql`
   }
 `
 
-const TESTPROPS = [
-  {
-    artist: 'hi',
-    author: 'hi2',
-    explainer: 'ex3',
-    imageURL:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PNG_transparency_demonstration_1.png/280px-PNG_transparency_demonstration_1.png',
-    link: '/',
-  },
-  {
-    artist: 'hAHAAHA',
-    author: 'hi2',
-    explainer: 'ex3',
-    imageURL: 'lol',
-    link: '/',
-  },
-  {
-    artist: 'custom artist names!',
-    author: 'hi2',
-    explainer: 'ex3',
-    imageURL: 'lol',
-    link: '/',
-  },
-  {
-    artist: 'look another artist',
-    author: 'hi2',
-    explainer: 'ex3',
-    imageURL: 'lol',
-    link: '/',
-  },
-  {
-    artist: 'passing in props is cool!',
-    author: 'hi2',
-    explainer: 'ex3',
-    imageURL: 'lol',
-    link: '/',
-  },
-  {
-    artist: 'hAHAAHA',
-    author: 'hi2',
-    explainer: 'ex3',
-    imageURL: 'lol',
-    link: '/',
-  },
-]
-
 const IndexPage = ({ data }) => {
-  // AOS.init()
-
   return (
     <div>
-      {/* <div ontouchstart> */}
-        {/* <CoverPic /> */}
+      {typeof document !== `undefined` && document.addEventListener("touchstart", function() {}, true)}
+        <Head {...data.site.siteMetadata}/>
         <div className={css`
           height: 100vh;
           width: 100%;
@@ -145,8 +97,7 @@ const IndexPage = ({ data }) => {
         <ItemGrid items={data.kerckhoffArticle.duets} id="bands" />
         <ItemGrid items={data.kerckhoffArticle.bands} id="extras" />
         <ItemGrid items={data.kerckhoffArticle.extras} id="" />
-        <Ftr>- design by Lauren Ho -</Ftr>
-      {/* </div> */}
+        <Footer developers={["Max Wu", "Henry Trinh", "Richard Yang", "Lauren Ho"]} copyrightYear={2019} />
     </div>
   )
 }
